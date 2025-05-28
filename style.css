@@ -1,0 +1,20 @@
+.board {
+  width: 700px;
+  height: 700px;
+  display: grid;
+}
+
+.square {
+  background: green;
+}
+
+.container {
+  margin: 5rem auto;
+  width: fit-content;
+}
+
+.board-border {
+  padding: 0.5rem;
+  background: black;
+  border-radius: 0.5rem;
+}
