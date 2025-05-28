@@ -10,11 +10,10 @@ function populateBoard(size) {
   board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
   boardSize = size * size;
-  for (let i = 0; i < boardSize * size; i++) {
+
+  for (let i = 0; i < boardSize; i++) {
     let square = document.createElement("div");
     square.addEventListener("mouseover", colorSquare);
-    //square.style.backgroundColor = "blue";
-
     square.classList.add("square");
     board.insertAdjacentElement("beforeend", square);
   }
@@ -45,8 +44,61 @@ function changeColor(choice) {
   penColor = choice;
 }
 
-function resetBoard() {
+function clearBoard() {
   let board = document.querySelector(".board");
   let squares = board.querySelectorAll("div");
-  squares.forEach((div) => (div.style.backgroundColor = "green"));
+  squares.forEach((div) => (div.style.backgroundColor = "rgb(215, 239, 247)"));
 }
+
+const buttonBlack = document.querySelector(".btn-black");
+const buttonRandom = document.querySelector(".btn-rainbow");
+const buttonEraser = document.querySelector(".btn-eraser");
+const selectedDivs = document.querySelectorAll(".selected");
+
+const btnBlackIndicator = buttonBlack.querySelector(".selected");
+btnBlackIndicator.style.display = "inline";
+
+function toggleSelected(btn) {
+  selectedDivs.forEach((div) => {
+    if (div.parentElement === btn) {
+      div.style.display = "inline";
+    } else {
+      div.style.display = "none";
+    }
+  });
+}
+
+buttonBlack.addEventListener("click", () => {
+  changeColor("black");
+  toggleSelected(buttonBlack);
+});
+
+buttonRandom.addEventListener("click", () => {
+  changeColor("random");
+  toggleSelected(buttonRandom);
+});
+
+buttonEraser.addEventListener("click", () => {
+  changeColor(`rgb(215, 239, 247)`);
+  toggleSelected(buttonEraser);
+});
+
+window.onkeydown = function (e) {
+  console.log(e.key);
+
+  if (e.key === "b") {
+    changeColor("black");
+    toggleSelected(buttonBlack);
+  }
+  if (e.key === "r") {
+    changeColor("random");
+    toggleSelected(buttonRandom);
+  }
+  if (e.key === "e") {
+    changeColor(`rgb(215, 239, 247)`);
+    toggleSelected(buttonEraser);
+  }
+  if (e.key === "c") {
+    clearBoard();
+  }
+};

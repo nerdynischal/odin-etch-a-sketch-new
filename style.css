@@ -1,20 +1,132 @@
+body {
+  font-family: "Gochi Hand", cursive;
+  font-weight: 400;
+  font-style: normal;
+
+  background: rgb(244, 252, 252);
+}
+
 .board {
-  width: 700px;
-  height: 700px;
+  width: 600px;
+  height: 600px;
   display: grid;
 }
 
 .square {
-  background: green;
+  background: rgb(215, 239, 247);
+  border: 1px solid lightblue;
 }
 
 .container {
-  margin: 5rem auto;
+  margin: 8em auto;
   width: fit-content;
+
+  display: flex;
+  gap: 8rem;
 }
 
 .board-border {
-  padding: 0.5rem;
-  background: black;
+  padding: 2rem;
+  background: rgb(113, 179, 223);
   border-radius: 0.5rem;
+
+  box-shadow: 50px 50px rgb(22, 46, 61);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  color: rgb(22, 46, 61);
+}
+
+button,
+input {
+  padding: 1rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.radio-selector {
+  display: flex;
+  justify-content: space-between;
+  background: red;
+  width: 100%;
+}
+
+.size {
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  cursor: pointer;
+  background: rgb(241, 241, 241);
+  box-shadow: 6px 6px rgb(22, 46, 61);
+
+  transition: all 0.1s ease-in;
+
+  position: relative;
+}
+
+.btn-black {
+  background: black;
+  color: white;
+}
+
+button:hover {
+  transform: translateY(4px);
+  transform: translateX(4px);
+  opacity: 0.9;
+  box-shadow: none;
+}
+
+button:active {
+  opacity: 0.7;
+}
+
+.btn-rainbow {
+  background: linear-gradient(
+    136deg,
+    rgba(195, 34, 34, 1) 0%,
+    rgba(191, 203, 55, 1) 14%,
+    rgba(74, 210, 76, 1) 26%,
+    rgba(101, 218, 220, 1) 44%,
+    rgba(93, 126, 226, 1) 62%,
+    rgba(216, 69, 239, 1) 77%,
+    rgba(245, 59, 171, 1) 87%,
+    rgba(253, 45, 48, 1) 100%
+  );
+  color: white;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.selected {
+  display: inline;
+}
+
+.selected {
+  display: none;
+  height: 1rem;
+  width: 1rem;
+  border: 2px solid black;
+  background: lime;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 16px;
 }
