@@ -2,7 +2,7 @@
 
 A project from The Odin Project to practice JavaScript and DOM manipulation.
 
-[Live Preview](https://nerdynischal.github.io/odin-etch-a-sketch-new/)
+[Live Preview](https://nerdynischal.github.io/odin-etch-a-sketch-new/) </br>
 [Source Code](https://github.com/nerdynischal/odin-etch-a-sketch-new)
 
 ## Description
