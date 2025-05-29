@@ -1,0 +1,13 @@
+.board {
+  width: 37.5rem; //600px
+  height: 37.5rem; //600px
+  display: grid;
+}
+
+.board-border {
+  padding: 2rem;
+  background: rgb(113, 179, 223);
+  border-radius: 0.5rem;
+
+  box-shadow: 3.125rem 3.125rem rgb(22, 46, 61); //50px 50px
+}

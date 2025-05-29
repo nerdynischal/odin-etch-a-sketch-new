@@ -1,0 +1,17 @@
+body {
+  background: rgb(244, 252, 252);
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container {
+  margin: 8rem auto;
+  width: fit-content;
+
+  display: flex;
+  gap: 8rem;
+}

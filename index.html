@@ -3,24 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Link Google Font "Gochi Hand" -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
+
+    <!--Link stylesheet-->
+    <link rel="stylesheet" href="./dist/main.css" />
     <title>Etch a Sketch</title>
   </head>
   <body>
     <div class="container">
+      <!--Controls container-->
       <aside>
         <h1>Etch-a-sketch</h1>
-
-        <div class="buttons">
+        <!--Controls/Buttons-->
+        <div class="buttons-container">
           <button class="btn-black">
             Black (B)
             <div class="selected"></div>
@@ -38,7 +40,9 @@
 
           <button onclick="clearBoard()">Clear (C)</button>
         </div>
-        <div class="size">
+
+        <!--Size Input field-->
+        <div class="size-input-container">
           <input
             type="text"
             placeholder="Size"
@@ -48,6 +52,8 @@
           <button>Set size</button>
         </div>
       </aside>
+
+      <!--Main board for sketching-->
       <main>
         <div class="board-border">
           <div class="board"></div>
@@ -55,6 +61,7 @@
       </main>
     </div>
 
+    <!--Link javascript-->
     <script src="main.js"></script>
   </body>
 </html>
