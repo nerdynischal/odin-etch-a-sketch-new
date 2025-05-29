@@ -25,10 +25,10 @@ function populateBoard(size) {
 
 /* Change grid size */
 function changeSize(input) {
-  if (input >= 2 || input <= 100) {
-    populateBoard(input);
+  if (!Number.isInteger(Number(input)) || input < 2 || input > 100) {
+    window.alert("Please enter a valid number between 2 and 100.");
   } else {
-    console.log("Please enter a value between 2 and 100.");
+    populateBoard(input);
   }
 }
 
@@ -42,7 +42,7 @@ function colorGrid() {
   }
 }
 
-/* Clear the board */
+/* Clears the board */
 function clearBoard() {
   let board = document.querySelector(".board");
   let squares = board.querySelectorAll("div");
@@ -72,7 +72,7 @@ buttonEraser.addEventListener("click", () => {
 
 /*Get clear button and add functionality */
 const buttonClear = document.querySelector(".btn-clear");
-buttonClear.addEventListener("click", clearBoard());
+buttonClear.addEventListener("click", clearBoard);
 
 /*Toggle selected indicator on buttons */
 const selectedDivs = document.querySelectorAll(".selected");
