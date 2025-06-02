@@ -1,3 +1,5 @@
+@use "../utilities/" as u;
+
 body {
   background: rgb(244, 252, 252);
 }
@@ -6,6 +8,7 @@ aside {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 1rem;
 }
 
 .container {
@@ -13,5 +16,12 @@ aside {
   width: fit-content;
 
   display: flex;
-  gap: 8rem;
+  gap: 2.5rem;
+
+  @include u.breakpoint-down(medium) {
+    flex-direction: column-reverse;
+    justify-content: center;
+    width: 100%;
+    margin: 2rem auto;
+  }
 }

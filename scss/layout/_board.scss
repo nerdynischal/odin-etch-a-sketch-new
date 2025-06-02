@@ -1,13 +1,24 @@
+@use "../utilities/" as u;
+
 .board {
-  width: 37.5rem; //600px
-  height: 37.5rem; //600px
   display: grid;
+  width: 100%;
+  height: 100%;
 }
 
-.board-border {
+.board-container {
+  width: u.rem(600);
+  height: u.rem(600);
   padding: 2rem;
   background: rgb(113, 179, 223);
   border-radius: 0.5rem;
+  margin: 0 auto;
 
-  box-shadow: 3.125rem 3.125rem rgb(22, 46, 61); //50px 50px
+  box-shadow: u.rem(50) u.rem(50) rgb(22, 46, 61);
+
+  @include u.breakpoint-down(medium) {
+    box-shadow: u.rem(8) u.rem(8) rgb(22, 46, 61);
+    width: 90vw;
+    height: 90vw;
+  }
 }
