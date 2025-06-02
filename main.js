@@ -117,11 +117,12 @@ window.onkeydown = function (e) {
 function changeCursor(cursor) {
   const board = document.querySelector(".board");
   if (cursor === "black") {
-    board.style.cursor = `url("../images/plus-icon-cursor.svg") 12 12, auto`;
+    board.style.cursor = `url("https://nerdynischal.github.io/odin-etch-a-sketch-new/images/plus-icon-cursor.svg") 12 12, auto`;
   } else if (cursor === "random") {
-    board.style.cursor = `url("../images/random-icon-cursor.svg") 12 12, auto`;
+    board.style.cursor = `url("https://nerdynischal.github.io/odin-etch-a-sketch-new/images/random-icon-cursor.svg") 12 12, auto`;
   } else if (cursor === "eraser") {
-    board.style.cursor = 'url("../images/minus-icon-cursor.svg") 12 12, auto';
+    board.style.cursor =
+      'url("https://nerdynischal.github.io/odin-etch-a-sketch-new/images/images/minus-icon-cursor.svg") 12 12, auto';
   }
 }
 
