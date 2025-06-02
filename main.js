@@ -122,7 +122,7 @@ function changeCursor(cursor) {
     board.style.cursor = `url("https://nerdynischal.github.io/odin-etch-a-sketch-new/images/random-icon-cursor.svg") 12 12, auto`;
   } else if (cursor === "eraser") {
     board.style.cursor =
-      'url("https://nerdynischal.github.io/odin-etch-a-sketch-new/images/images/minus-icon-cursor.svg") 12 12, auto';
+      'url("https://nerdynischal.github.io/odin-etch-a-sketch-new/images/minus-icon-cursor.svg") 12 12, auto';
   }
 }
 
