@@ -53,6 +53,7 @@ function clearBoard() {
 const buttonBlack = document.querySelector(".btn-black");
 buttonBlack.addEventListener("click", () => {
   changePenColor("black");
+  changeCursor("black");
   toggleSelected(buttonBlack);
 });
 
@@ -60,6 +61,7 @@ buttonBlack.addEventListener("click", () => {
 const buttonRandom = document.querySelector(".btn-random");
 buttonRandom.addEventListener("click", () => {
   changePenColor("random");
+  changeCursor("random");
   toggleSelected(buttonRandom);
 });
 
@@ -67,6 +69,7 @@ buttonRandom.addEventListener("click", () => {
 const buttonEraser = document.querySelector(".btn-eraser");
 buttonEraser.addEventListener("click", () => {
   changePenColor(`rgb(215, 239, 247)`);
+  changeCursor("eraser");
   toggleSelected(buttonEraser);
 });
 
@@ -92,14 +95,17 @@ window.onkeydown = function (e) {
 
   if (e.key === "b") {
     changePenColor("black");
+    changeCursor("black");
     toggleSelected(buttonBlack);
   }
   if (e.key === "r") {
     changePenColor("random");
+    changeCursor("random");
     toggleSelected(buttonRandom);
   }
   if (e.key === "e") {
     changePenColor(`rgb(215, 239, 247)`);
+    changeCursor("eraser");
     toggleSelected(buttonEraser);
   }
   if (e.key === "c") {
@@ -107,7 +113,20 @@ window.onkeydown = function (e) {
   }
 };
 
+/*Cursor setting */
+function changeCursor(cursor) {
+  const board = document.querySelector(".board");
+  if (cursor === "black") {
+    board.style.cursor = `url("../../images/plus-icon-cursor.svg") 12 12, auto`;
+  } else if (cursor === "random") {
+    board.style.cursor = `url("../../images/random-icon-cursor.svg") 12 12, auto`;
+  } else if (cursor === "eraser") {
+    board.style.cursor =
+      'url("../../images/minus-icon-cursor.svg") 12 12, auto';
+  }
+}
+
 /* Create board with default values */
-populateBoard(16);
-const btnBlackIndicator = buttonBlack.querySelector(".selected");
-btnBlackIndicator.style.display = "inline";
+populateBoard(20);
+toggleSelected(buttonBlack);
+changeCursor("black");
