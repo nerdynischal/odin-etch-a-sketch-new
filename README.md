@@ -25,8 +25,5 @@ A browser version of a mix between a pixelated sketchpad and Etch a Sketch.
 
 ## Upcoming features
 
-- Add custom cursors
-- Add toast messages
 - Add feature to draw only when mouse is pressed
 - Add responsiveness
-- Add color picker
