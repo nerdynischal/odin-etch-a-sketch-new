@@ -1,4 +1,5 @@
 let penColor = "black";
+let isDrawing = false;
 
 function changePenColor(color) {
   penColor = color;
@@ -15,11 +16,20 @@ function populateBoard(size) {
   board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
   boardSize = size * size;
 
+  board.addEventListener("mousedown", () => {
+    isDrawing = true;
+  });
+
+  board.addEventListener("mouseup", () => {
+    isDrawing = false;
+  });
+
   for (let i = 0; i < boardSize; i++) {
     let square = document.createElement("div");
-    square.addEventListener("mouseover", colorGrid);
     square.classList.add("square");
     board.insertAdjacentElement("beforeend", square);
+    square.addEventListener("mouseover", colorGrid);
+    square.addEventListener("mousedown", colorGrid);
   }
 }
 
@@ -33,12 +43,14 @@ function changeSize(input) {
 }
 
 /* Draw colour on grid */
-function colorGrid() {
+function colorGrid(e) {
+  if (e.type === "mouseover" && !isDrawing) return;
+
   if (penColor === "random") {
-    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
-    this.style.backgroundColor = "#" + randomColor;
+    e.target.style.backgroundColor =
+      "#" + Math.floor(Math.random() * 16777215).toString(16);
   } else {
-    this.style.backgroundColor = penColor;
+    e.target.style.backgroundColor = penColor;
   }
 }
 
